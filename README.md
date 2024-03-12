@@ -35,25 +35,22 @@ WHERE YEAR(CURDATE()) - YEAR(date_of_birth) = 30;
 ```
 
 ### 4) Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286).
-
 ```sql
 SELECT * 
 FROM `courses` 
-WHERE `year` = 1 AND 
-      `period` = 'I semestre';
+WHERE `year` = 1
+AND `period` = 'I semestre';
 ```
 
 ### 5) Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del 20/06/2020 (21).
-
 ```sql
 SELECT * 
 FROM `exams` 
-WHERE `date` = DATE('2020-06-20') AND 
-      `hour` > '14:00:00';
+WHERE `date` = DATE('2020-06-20') 
+AND `hour` > '14:00:00';
 ```
 
 ### 6) Selezionare tutti i corsi di laurea magistrale (38).
-
 ```sql
 SELECT * 
 FROM `degrees` 
@@ -61,16 +58,14 @@ WHERE `name` LIKE '%corso di Laurea magistrale%';
 ```
 
 ### 7) Da quanti dipartimenti è composta l'università? (12).
-
 ```sql
 SELECT COUNT(*)
 FROM `departments`;
 ```
 
 ### 8) Quanti sono gli insegnanti che non hanno un numero di telefono? (50).
-
 ```sql
-SELECT * 
+SELECT COUNT(*) 
 FROM `teachers` 
 WHERE `phone` IS NULL;
 ```
